@@ -26,12 +26,7 @@ export class MyApp {
   }
 
   checkCodePush() {
-    let alert = this.alertCtrl.create({
-      title: 'CODE PUSH CHECK',
-      subTitle: 'Code push check function.',
-      buttons: ['Dismiss']
-    });
-    alert.present();
+    
      this.codePush.sync({
       updateDialog: {
        appendReleaseDescription: true,
@@ -41,21 +36,11 @@ export class MyApp {
    }).subscribe(
      (data) => {
       console.log('CODE PUSH SUCCESSFUL: ' + data);
-      let alertSuccess = this.alertCtrl.create({
-        title: 'CODE PUSH SUCCESS',
-        subTitle: 'Code push success!' + data.toString(),
-        buttons: ['Dismiss']
-      });
-      alertSuccess.present();
+      
      },
      (err) => {
       console.log('CODE PUSH ERROR: ' + err);
-      let alertError = this.alertCtrl.create({
-        title: 'CODE PUSH error',
-        subTitle: 'Code push error!' + err.toString(),
-        buttons: ['Dismiss']
-      });
-      alertError.present();
+      
      }
    );
   }
