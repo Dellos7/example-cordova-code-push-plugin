@@ -39,7 +39,7 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-        <preference name="CodePushDeploymentKey" value="2zVLvf1mBPqGU3a_uVTj0yo9M_94c987dc09-79f6-4e5e-a32f-110d2854980f" />
+        <preference name="CodePushDeploymentKey" value="" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -76,7 +76,7 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
-        <preference name="CodePushDeploymentKey" value="eG8ZyGd0iNuIP3ujXw0fTR5vrMsXc987dc09-79f6-4e5e-a32f-110d2854980f" />
+        <preference name="CodePushDeploymentKey" value="mHtuvRxoz1YBQhmU3zC_J6TIi07Lc987dc09-79f6-4e5e-a32f-110d2854980f" />
     </platform>
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
