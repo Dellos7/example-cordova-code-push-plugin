@@ -1,5 +1,7 @@
 # cordova-code-push + Ionic example
 
+Example of how to set up a basic Ionic APP with the code-push cordova plugin.
+
 ## Prepare the Ionic APP
 
 `ionic start codepush-ionic-test blank`
@@ -22,17 +24,21 @@
 
 `code-push login`
 
+> This command will open the browser and you will have to create an account with the code-push cloud services (you can use your Github, Google, Hotmail one). After successful sign-up, you must copy the token provided by the browser in the terminal.
+
 `code-push app add codepush-ionic-test-ios ios cordova`
 
 `code-push app add codepush-ionic-test-android android cordova`
 
-**See again the keys:**
+> It's better to add two different apps in your code-push account for each platform so you can handle them separately.
+
+**See again the deployment keys:**
 
 `code-push deployment ls codepush-ionic-test-android -k`
 
 `code-push deployment ls codepush-ionic-test-ios -k`
 
-**config.xml**:
+Now set up these keys in your **config.xml**:
 ```xml
 <platform name="android">
     <preference name="CodePushDeploymentKey" value="YOUR-ANDROID-DEPLOYMENT-KEY" />
@@ -42,7 +48,7 @@
 </platform>
 ```
 
-**src/app/app.module.ts** (set `CodePush` as provider):
+Modify **src/app/app.module.ts** (to set `CodePush` as provider):
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -81,7 +87,7 @@ export class AppModule {}
 
 ```
 
-**src/app.component.ts** (alert for **updates**):
+Finally, use the plugin! Modify **src/app.component.ts** (alert for **updates**):
 
 ```typescript
 import { Component } from '@angular/core';
@@ -134,7 +140,9 @@ export class MyApp {
 }
 ```
 
-## Release the update
+Now, you should build your app and test it in your emulator/physical device. You will be only building it once, and then releasing the updates throw code-push.
+
+## Release the updates
 
 Modify anything in your app and...
 
