@@ -87,7 +87,7 @@ export class AppModule {}
 
 ```
 
-Finally, use the plugin! Modify **src/app.component.ts** (alert for **updates**):
+Finally, use the plugin! Modify **src/app.component.ts** (this basic set up will show an **alert** to handle **updates**):
 
 ```typescript
 import { Component } from '@angular/core';
@@ -113,7 +113,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      this.checkCodePush();
+      this.checkCodePush(); //Use the plugin always after platform.ready()
     });
   }
 
@@ -140,7 +140,17 @@ export class MyApp {
 }
 ```
 
+> **Note**: to handle more advanced code-push sync options, as creating your custom mechanism of handling updates with custom UI, etc., you should check out the [cordova code-push plugin API reference and examples](https://github.com/Microsoft/cordova-plugin-code-push#api-reference).
+
 Now, you should build your app and test it in your emulator/physical device. You will be only building it once, and then releasing the updates throw code-push.
+
+`ionic cordova build ios`
+
+`ionic cordova run ios`
+
+`ionic cordova build android`
+
+`ionic cordova run android`
 
 ## Release the updates
 
