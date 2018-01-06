@@ -154,7 +154,7 @@ Now, you should build your app and test it in your emulator/physical device. You
 
 ## Release the updates
 
-Modify anything in your app and...
+**Each time** you modify anything in your code, you release an update like this:
 
 `ionic cordova prepare ios`
 
@@ -165,3 +165,8 @@ Modify anything in your app and...
 `code-push release codepush-ionic-test-android ./platforms/android/assets/www/ 0.0.1 --description "Your awesome change description"`
 
 > **Note**: the update will only be released for those devices matching the 0.0.1 version of your app.
+
+## Screenshots app update
+
+<img src="screenshots_readme/update_cp.png" width="400">
+<img src="screenshots_readme/update_cp_changed.png" width="400">
