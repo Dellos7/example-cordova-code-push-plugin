@@ -168,5 +168,5 @@ Now, you should build your app and test it in your emulator/physical device. You
 
 ## Screenshots app update
 
-<img src="screenshots_readme/update_cp.png" width="400">
-<img src="screenshots_readme/update_cp_changed.png" width="400">
+<img src="screenshots_readme/update_cp.png" align="left" width="300">
+<img src="screenshots_readme/update_cp_changed.png" align="left" width="300">
