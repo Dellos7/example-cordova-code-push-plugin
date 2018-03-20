@@ -158,13 +158,31 @@ Now, you should build your app and test it in your emulator/physical device. You
 
 `ionic cordova prepare ios`
 
-`code-push release codepush-ionic-test-ios ./platforms/ios/www/ 0.0.1 --description "Your awesome change description"`
+`code-push release codepush-ionic-test-ios ./platforms/ios/www/ 0.0.1 --description "Your awesome change description" -d "Staging"` (the `-d` flag can be "Production" or "Staging", so you can manage and test your releases against staging APPs)
 
 `ionic cordova prepare android`
 
-`code-push release codepush-ionic-test-android ./platforms/android/assets/www/ 0.0.1 --description "Your awesome change description"`
+`code-push release codepush-ionic-test-android ./platforms/android/assets/www/ 0.0.1 --description "Your awesome change description" -d "Staging"` (the `-d` flag can be "Production" or "Staging", so you can manage and test your releases against staging APPs)
 
 > **Note**: the update will only be released for those devices matching the 0.0.1 version of your app.
+
+### Releasing updates pro tips
+
+If you would like to release an update but not make it available until you specify it, you could release the update with the disabled mode enabled. Like this:
+
+`ionic cordova prepare android `
+
+`code-push release codepush-ionic-test-android ./platforms/android/assets/www/ 0.0.1 --description "Your awesome change description" -x true` (see the `-x` flag, that marks the release as disabled)
+
+This would send the release to the code push server, but it won't be downloable by the users. Then, whenever you want to, you would mark the release as not disabled, and thus immediately downloable, with the following command:
+
+`code-push patch codepush-ionic-test-android Staging -x false`
+
+What happens if we make a mistake in the release? We could rollback the release. This would make this release unavailable for the users, and would also make available the prior release to the one you are rollbacking available again for donwload. You can make a rollback with the following command:
+
+`code-push rollback codepush-ionic-test-android Staging`
+
+> **Note**: check out the [code-push cli README](https://github.com/Microsoft/code-push/tree/master/cli) for a more advanced use.
 
 ## Screenshots app update
 
