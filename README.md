@@ -162,7 +162,9 @@ Now, you should build your app and test it in your emulator/physical device. You
 
 `ionic cordova prepare android`
 
-`code-push release codepush-ionic-test-android ./platforms/android/assets/www/ 0.0.1 --description "Your awesome change description" -d "Staging"` (the `-d` flag can be "Production" or "Staging", so you can manage and test your releases against staging APPs)
+`code-push release codepush-ionic-test-android ./platforms/android/app/src/main/assets/www/ 0.0.1 --description "Your awesome change description" -d "Staging"` (the `-d` flag can be "Production" or "Staging", so you can manage and test your releases against staging APPs)
+
+> :warning: The path changes from `cordova-android` 6 to 7. So in <= 6.x it's ./platforms/android/assets/www/ and and in >= 7.x it's ./platforms/android/app/src/main/assets/www/. Just check your `cordova-android` package version in the `package.json` file.
 
 > **Note**: the update will only be released for those devices matching the 0.0.1 version of your app.
 
